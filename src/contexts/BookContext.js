@@ -6,6 +6,7 @@ export const BookContext = createContext();
 const BookContextProvider =(props)=> {
     const [books, setBooks] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [freeBooks, setFreeBooks] = useState([])
 
     useEffect(() => {
         fetchBooks();
@@ -25,16 +26,17 @@ const BookContextProvider =(props)=> {
             });
     };
 
-    const fetchFreeBook =()=> {
-        axios.get('https://api.itbook.store/1.0/new')
-            .then(res =>
-                setBooks([...books.filter(book => book.price !== "$0.00")])
-            );
-    };
+
+    useEffect(() => {
+        const freeBook =()=> {
+            setFreeBooks(books.filter(book => book.price === '$0.00'))
+        }
+        freeBook()
+    }, [books])
 
 
     return (
-        <BookContext.Provider value={{books, isLoading, fetchFreeBook}}> 
+        <BookContext.Provider value={{books, isLoading, freeBooks}}> 
             {props.children}
         </BookContext.Provider>
     )

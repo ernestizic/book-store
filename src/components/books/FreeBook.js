@@ -1,16 +1,17 @@
 import React, {useContext} from 'react';
 import { BookContext } from '../../contexts/BookContext';
+import BookItem from './BookItem';
 
 const FreeBook = () => {
-    const {fetchFreeBook} = useContext(BookContext);
-
-    console.log(fetchFreeBook.length)
+    const {freeBooks} = useContext(BookContext);
     
 
-    return ( 
-        <div>
-            <p style={{textAlign: 'center'}}>Nothing to see here</p>
-        </div>
+    return freeBooks.length > 0 ? (
+        freeBooks.map(book => (
+            <BookItem key={book.isbn13} book={book} />
+        ))
+    ) : ( 
+        <p style={{textAlign: 'center'}}>Nothing to see here</p>
      );
 }
  
