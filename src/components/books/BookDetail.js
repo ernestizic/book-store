@@ -7,12 +7,14 @@ import Spinner from '../ui/Spinner';
 
 
 const BookDetail = () => {
+
+// https://cors.bridged.cc/https://api.itbook.store/1.0/books/${book_id}`
     const { book_id } = useParams();
 
     const [bookDetail, setBookDetail] = useState(null);
 
     useEffect(() => {
-        axios.get(`https://cors.bridged.cc/https://api.itbook.store/1.0/books/${book_id}`)
+        axios.get(`https://api.itbook.store/1.0/books/${book_id}`)
             .then(res => {
                  //console.log(res.data)
                  setBookDetail(res.data)
