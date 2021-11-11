@@ -7,9 +7,9 @@ import Searchbar from './Searchbar';
 const Navbar = () => {
 
     return ( 
-        <nav className="navbar navbar-expand-sm navbar-dark">
+        <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/"> <img src={logo} alt='logo' /> </Link>
+                <Link className="navbar-brand" to="/"> <img src={logo} alt='logo' style={{width: '170px'}} /> </Link>
                 <i className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </i>

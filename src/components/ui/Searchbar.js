@@ -29,7 +29,7 @@ const Searchbar = () => {
                     value={text}
                     onChange={(e)=> setText(e.target.value)} 
                     required
-                />
+                />  
                 <div className="input-group-append">
                     <button className="btn btn-danger" type="submit"> 
                         <i className="fa fa-search"></i>

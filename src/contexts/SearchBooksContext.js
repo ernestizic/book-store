@@ -14,7 +14,7 @@ const SearchBooksContextProvider =(props)=> {
     }, [])
 
     const getQuery =(text)=> {
-        axios.get(`https://cors.bridged.cc/https://api.itbook.store/1.0/search/${text}`)
+        axios.get(`https://api.itbook.store/1.0/search/${text}`)
             .then(res => 
                {
                 //console.log(res.data)
