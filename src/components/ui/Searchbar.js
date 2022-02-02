@@ -12,7 +12,7 @@ const Searchbar = () => {
     const handleSearch = async(e)=> {
         e.preventDefault();
         history.push ({
-            pathname: '/search'
+            pathname: `/search/?q=${text}`
         })
         //console.log(text)
         getQuery(text);

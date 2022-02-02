@@ -25,7 +25,7 @@ function App() {
             <Route exact path="/" component={IndexPage} />
             <Route path="/about" component={AboutPage} />
             <Route path="/freebook" component={FreeBookPage} />
-            <Route path="/search" component={SearchPage}/>
+            <Route path="/search/:keyword" component={SearchPage}/>
             <Route path="/books/:book_id" component={BookDetailPage}/>
             <Route path="*">
               <NotFound />

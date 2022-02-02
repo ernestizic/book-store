@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -14,10 +13,9 @@ const SearchBooksContextProvider =(props)=> {
     }, [])
 
     const getQuery =(text)=> {
-        axios.get(`https://api.itbook.store/1.0/search/${text}`)
+        axios.get(`https://api.itbook.store/1.0/search/${text}/2`)
             .then(res => 
                {
-                //console.log(res.data)
                 setSearch(res.data.books)
                 setIsLoading(false)
                }   
